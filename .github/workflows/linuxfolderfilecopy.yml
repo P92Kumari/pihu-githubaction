@@ -34,3 +34,22 @@ jobs:
           echo ""
           echo "Displaying file content:"
           cat my_folder/sample.txt
+
+      - name: Add Job Summary
+        run: |
+          echo "## GitHub Actions Learning Workflow" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### What this workflow did" >> $GITHUB_STEP_SUMMARY
+          echo "- Created a new Linux folder named \`my_folder\`" >> $GITHUB_STEP_SUMMARY
+          echo "- Created a file named \`sample.txt\`" >> $GITHUB_STEP_SUMMARY
+          echo "- Copied the file into the folder" >> $GITHUB_STEP_SUMMARY
+          echo "- Verified the contents using Linux commands" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Runner Information" >> $GITHUB_STEP_SUMMARY
+          echo "- Runner OS: ubuntu-latest" >> $GITHUB_STEP_SUMMARY
+          echo "- Workflow Trigger: Manual" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### File Content" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          cat my_folder/sample.txt >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
