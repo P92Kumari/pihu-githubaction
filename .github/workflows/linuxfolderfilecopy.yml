@@ -14,7 +14,7 @@ jobs:
       - name: Create Folder and File
         run: |
           echo "Creating folder..."
-          mkdir my_folder
+          kdir my_folder
 
           echo "Creating file..."
           echo "Hello Ravi, this is a sample GitHub Actions workflow." > sample.txt
