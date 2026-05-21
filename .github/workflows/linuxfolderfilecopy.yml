@@ -1,0 +1,36 @@
+name: Sample Linux File Operations
+
+on:
+  workflow_dispatch:
+
+jobs:
+  file-operations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create Folder and File
+        run: |
+          echo "Creating folder..."
+          mkdir my_folder
+
+          echo "Creating file..."
+          echo "Hello Ravi, this is a sample GitHub Actions workflow." > sample.txt
+
+          echo "Copying file to folder..."
+          cp sample.txt my_folder/
+
+      - name: Verify Files
+        run: |
+          echo "Current directory contents:"
+          ls -lrt
+
+          echo ""
+          echo "Contents inside my_folder:"
+          ls -lrt my_folder
+
+          echo ""
+          echo "Displaying file content:"
+          cat my_folder/sample.txt
